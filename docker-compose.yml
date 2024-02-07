@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  auth:
+    image: auth
+    build:
+      context: ./src/auth
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+      - .env.default
+    ports:
+      - "${PORT}:${PORT}"
